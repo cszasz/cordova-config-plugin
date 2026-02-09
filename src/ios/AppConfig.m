@@ -1,24 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin id="app-config-plugin"
-        version="1.0.0"
-        xmlns="http://apache.org/cordova/ns/plugins/1.0">
+#import <Cordova/CDV.h>
 
-    <name>AppConfig</name>
+@interface AppConfig : CDVPlugin
+- (void)getPreference:(CDVInvokedUrlCommand*)command;
+@end
 
-    <js-module src="www/AppConfig.js" name="AppConfig">
-        <clobbers target="AppConfig"/>
-    </js-module>
+@implementation AppConfig
 
-    <!-- ANDROID -->
-    <platform name="android">
-        <source-file src="src/android/AppConfig.java"
-                     target-dir="src/com/example/appconfig" />
-    </platform>
+- (void)getPreference:(CDVInvokedUrlCommand*)command
+{
+    NSString* key = [command.arguments objectAtIndex:0];
+    
+    // Cordova stores preferences keys in lowercase internally
+    NSString* value = [self.commandDelegate.settings objectForKey:[key lowercaseString]];
+    
+    if (value == nil) {
+        value = @""; // default to empty string if not found
+    }
 
-    <!-- IOS -->
-    <platform name="ios">
-        <source-file src="src/ios/AppConfig.m" />
-    </platform>
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                                                  messageAsString:value];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
 
-</plugin>
+@end
 
