@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="app-config-plugin"
+<plugin id="cordova-config-plugin"
         version="1.0.0"
         xmlns="http://apache.org/cordova/ns/plugins/1.0">
 
