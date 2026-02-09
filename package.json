@@ -1,0 +1,13 @@
+{
+  "name": "cordova-config-plugin",
+  "version": "1.0.0",
+  "description": "A Cordova plugin to expose config.xml preferences to JS",
+  "cordova": {
+    "id": "app-config-plugin",
+    "platforms": ["android", "ios"]
+  },
+  "keywords": ["cordova", "plugin", "config"],
+  "author": "Csaba Szazs",
+  "license": "MIT"
+}
+
