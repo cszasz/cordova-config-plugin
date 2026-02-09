@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="app-config-plugin"
+        version="1.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0">
+
+    <name>AppConfig</name>
+
+    <js-module src="www/AppConfig.js" name="AppConfig">
+        <clobbers target="AppConfig"/>
+    </js-module>
+
+    <!-- ANDROID -->
+    <platform name="android">
+        <source-file src="src/android/AppConfig.java"
+                     target-dir="src/com/example/appconfig" />
+    </platform>
+
+    <!-- IOS -->
+    <platform name="ios">
+        <source-file src="src/ios/AppConfig.m" />
+    </platform>
+
+</plugin>
+
