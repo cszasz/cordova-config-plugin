@@ -19,13 +19,14 @@
     <platform name="ios">
         <source-file src="src/ios/AppConfig.m" />
         <source-file src="src/ios/AppConfig.h" />
-    </platform>
 
-    <config-file target="config.xml" parent="/*">
-        <feature name="AppConfig">
-            <param name="ios-package" value="AppConfig" />
-        </feature>
-    </config-file>
+	<config-file target="config.xml" parent="/*">
+	   <feature name="AppConfig">
+              <param name="ios-package" value="AppConfig" />
+	   </feature>
+	</config-file>
+
+    </platform>
 
 </plugin>
 
