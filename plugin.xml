@@ -13,6 +13,13 @@
     <platform name="android">
         <source-file src="src/android/AppConfig.java"
                      target-dir="src/com/example/appconfig" />
+
+	<config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AppConfig">
+                <param name="android-package"
+                       value="com.example.appconfig.AppConfig" />
+            </feature>
+        </config-file>
     </platform>
 
     <!-- IOS -->
