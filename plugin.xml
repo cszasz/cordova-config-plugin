@@ -21,5 +21,11 @@
         <source-file src="src/ios/AppConfig.h" />
     </platform>
 
+    <config-file target="config.xml" parent="/*">
+        <feature name="AppConfig">
+            <param name="ios-package" value="AppConfig" />
+        </feature>
+    </config-file>
+
 </plugin>
 
