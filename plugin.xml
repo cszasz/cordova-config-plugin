@@ -6,7 +6,7 @@
     <name>AppConfig</name>
 
     <js-module src="www/AppConfig.js" name="AppConfig">
-        <clobbers target="AppConfig"/>
+        <clobbers target="window.plugins.AppConfig"/>
     </js-module>
 
     <!-- ANDROID -->
